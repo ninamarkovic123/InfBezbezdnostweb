@@ -16,7 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
+/*
 @RestController
 @RequestMapping(value = "/api/demo", produces = MediaType.APPLICATION_JSON_VALUE)
 public class DemoController {
@@ -102,4 +102,4 @@ public class DemoController {
 
 		return file;
 	}
-}
+}*/

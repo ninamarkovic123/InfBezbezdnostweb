@@ -1,15 +1,125 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<script type="text/javascript" src="js/main.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>WEB</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<a href="./user_content/cat.jpg" download>Download link for static
-		files</a>
-	<button type="button"  onclick="download()">Download link for
-		target/files files</button>
-</body>
+    <div class="container">
+    
+      
+        <div class="login" id="loginForm">
+          <h1>Login</h1>
+            <form>
+              <input type="text" name="u" id="username" placeholder="Email" required="required" />
+                <input type="password" name="p" id="password" placeholder="Password" required="required" />
+                <button type="button" class="btn btn-primary btn-block btn-large" onclick="login()">Prijava</button>
+                <button type="button" class="btn btn-primary btn-block btn-large"  id="showRegister" onclick="registerForm()">Register</button>
+            </form>
+            <div class="col-sm-6 col-lg-4 alert alert-danger" role="alert" id="wrongCredentialsError" style="display:none;">
+             Pogresni kredencijali!
+            </div>
+        </div>
 
+        <div class="register" id="registracijaForma" style="display:none;">
+          <h1>Register</h1>
+            <form>
+              <input type="text" name="u" id="imeRegister" placeholder="Ime" required="required" />
+              <input type="text" name="u"  id="prezimeRegister" placeholder="Prezime" required="required" />
+              <input type="text" name="u"  id="emailRegister" placeholder="Email" required="required" />
+                <input type="password" name="p"  id="lozinkaRegister"  placeholder="Lozinka" required="required" />
+                <button type="submit" class="btn btn-primary btn-block btn-large"onclick="register()">Registracija</button>
+                <button type="button" onclick="goToLogin()" class="btn btn-primary btn-block btn-large">Nazad na login</button> <br/>
+            </form>
+            <div class="col-sm-6 col-lg-4 alert alert-danger" role="alert" id="pogresanEmail" style="display:none;">
+              Korisnik sa ovim emailom je vec registrovan!
+            </div>
+            <div class="col-sm-6 col-lg-4 alert alert-danger" role="alert" id="praznoPolje" style="display:none;">
+             Ne ostavljate prazna polja!
+            </div>
+        </div>
+       
+     
+    <div id="drugaForma" style="display:none;">
+		<h1 style="margin-left:1.25em;" id="welcomeMessage"></h1>
+
+		<br/>
+		
+     <div class="card">
+       
+              <br> <br> <br>
+              <div id="samoZaAdmina">
+               <label class="control-label col-sm-2">Vidi korisnike koji nisu jos aktivni</label>
+	             <div class="col-sm-3">
+	                    <button type="button" class="btn btn-primary btn-block btn-large" id="btnGetUsers" onclick="getNeaktivneKorisnike()">Click here</button>
+	              </div>
+              </div>
+            </div>
+        </form>
+    </div>
+    <br>
+    
+   
+        
+        <br>
+       
+      
+        
+       <div id = "korisnikTabelaForm" style="display:none;">
+          <div class="col-sm-4">
+			<table class="table table-striped table-dark" id="korisniciTable">
+			  <thead>
+			    <tr>
+			      <th scope="col">Korisnik</th>
+			      <th scope="col">Sertifikat</th>
+			    </tr>
+			  </thead>
+			 </table> 
+			 </div>
+       </div>
+
+		<br>
+      
+      <div id = "neaktivniKorisniciTable" style="display:none;">
+          <div class="col-sm-4">
+        <table class="table table-striped table-dark" id="aktiviranjeKorisnikaTable">
+		  <thead>
+		    <tr>
+		      <th scope="col">Korisnik</th>
+		      <th scope="col">Nisu aktivni</th>
+		    </tr>
+		  </thead>
+		</table>
+		</div>
+        </div>
+        
+    
+		<br/>	
+		<br>
+		<br>
+		<br>    
+	    
+	    <div class="card">
+	      <div class="card-header">
+	      	<div class="btn-group">
+		      	<button type="button" id="logoutButton" onclick="logout()" class="btn btn-info form-group" style="margin-right:1.25em;">Log out</button>
+	 			<button type="button" onclick="goToLogin()" class="btn btn-info form-group">Idi na login formu</button> <br/>
+ 			</div>
+	      </div>
+	    </div>
+		
+	</div>
+        
+        
+	
+    </div>
+    
+</body>
 </html>

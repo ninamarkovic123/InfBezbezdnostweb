@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import ib.project.rest.DemoController;
+//import ib.project.rest.DemoController;
 
 @SpringBootApplication
 public class DemoApplication {
@@ -27,7 +27,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 		
 		//create files folder in target/classes
-		try {
+		/*try {
 			String path = DemoController.class.getProtectionDomain().getCodeSource().getLocation().getPath() + DATA_DIR_PATH;
 			path = path.replaceAll("%20", " ");
 			FileUtils.forceMkdir(new File(path));
@@ -35,7 +35,7 @@ public class DemoApplication {
 			logger.info("Folder with user files: " + path);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 }
  

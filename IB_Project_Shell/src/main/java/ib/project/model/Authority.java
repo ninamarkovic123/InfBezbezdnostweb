@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="AUTHORITY")
 public class Authority implements GrantedAuthority {
 	
-	private static final long serialVersionUID = -2735543061370984774L;
+		private static final long serialVersionUID = 6561735879170845069L;
 
 	@Id
     @Column(name="id")
